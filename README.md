@@ -1,7 +1,7 @@
 # kiedrowskiURP2024
 
-###Purpose:
-Using a nuclear morphology stain, we can group the cells using Euclidean hierarchical clustering to see if there is a phenotypic difference in the nucleus during the maturation process in the thymus.
+### Purpose:
+Using only a nuclear stain, we can group the cells using Euclidean hierarchical clustering to see if there is a phenotypic difference in the nucleus during the T cell maturation process in the thymus.
 
 ### Order of execution:
 1. Cellpose segmentation on dapi channel ([Cellpose github](https://github.com/MouseLand/cellpose))    
