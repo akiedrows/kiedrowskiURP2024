@@ -6,6 +6,6 @@
 3. Combine property tables with mergeproperties.R  
 4. pheatmap.R for if you want to annotate for multiple clone channels, or pheatmap_dapi for if only analyzing dapi    
 5. map_colored_clusters.py uses the clusters from the output of pheatmap and displays them on the original seg masks  
-6. overlay_spatial will use make the masks transparent so you can see it ontop of the original tif image
+6. overlay_spatial will make the masks semi-transparent and map ontop of the original tif image
 
 For further information: email me @ akiedrowski2@mail.niagara.edu
