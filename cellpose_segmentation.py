@@ -18,8 +18,7 @@ input_tif_file = '../photofiles/hu_cd45_63x_1_s8/hu_cd45_63x_1_s8_dapi.tif'
 #input_seg_file = snakemake.input.og_seg_file
 #input_tif_file = snakemake.input.components
 
-#min_area = 0
-#max_area = 1300
+
 buffer_size = 20
 
 
@@ -74,12 +73,12 @@ import index_components
 
 #img_gray = image if image.ndim == 2 else image[:, :, 0]
 
-#index_components.properties_table(labels, image, basename, output_dir)
+index_components.properties_table(labels, image, basename, output_dir)
 #index_components.properties_table(labels, image, snakemake.output.properties)
 
-#index_components.histograms(basename, output_dir)
+index_components.histograms(basename, output_dir)
 
-#index_components.save_ROIs(buffer_size, img_rescaled, basename, output_dir)
+index_components.save_ROIs(buffer_size, img_rescaled, basename, output_dir) 
 
 index_components.isolate_ROIs(buffer_size, image, labels, basename, output_dir)
 
