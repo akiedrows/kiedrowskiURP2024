@@ -80,7 +80,8 @@ def save_ROIs(buffer_size, img_rescaled, basename, output_dir):
                 object_filename = f'object{label:04d}.png'
                 object_filepath = os.path.join(objects_output_dir, object_filename)
 
-                #restores some images for isolate_ROIs
+                # comment out if you do not want to save every image, only needed for sanity check
+                # needed if wanting to print isolate roi images
                 if object_img.dtype != np.uint16:
                     object_img = (object_img / np.max(object_img) * 65535).astype(np.uint16)
                 
@@ -96,13 +97,7 @@ def grayco_features(isolated_img_gray):
     contrast = graycoprops(P, 'contrast')[0, 0]
     homogeneity = graycoprops(P, 'homogeneity')[0, 0]
     ASM = graycoprops(P, 'ASM')[0, 0]
-    correlation = graycoprops(P, 'correlation')[0, 0]
-    
-    #df = DataFrame(P)
-    #df = pd.read_csv('P.csv', header=None, encoding = 'utf8', delimiter=';')    
-
-    #np.save('P.csv', P)  
-                                
+    correlation = graycoprops(P, 'correlation')[0, 0]      
     return contrast, homogeneity, ASM, correlation
 
 
@@ -155,7 +150,7 @@ def isolate_ROIs(buffer_size, image, masks, basename, output_dir):
         #print(contrast, homogeneity, ASM, correlation)
         #contrast, homogeneity, ASM, correlation, P = grayco_features(isolated_with_values)
         grayco_data.append({'label': label, 'contrast': contrast, 'homogeneity':homogeneity, 'ASM':ASM, 'correlation':correlation})
-        # commented out all saving lines
+        # comment out if you do not want to save every image, only needed for sanity check
         isolated_object_filename = f'isolated_object{label:04d}.png'
         isolated_object_filepath = os.path.join(isolated_objects_dir, isolated_object_filename)
         io.imsave(isolated_object_filepath, isolated_with_values_scaled)
