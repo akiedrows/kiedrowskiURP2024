@@ -4,7 +4,7 @@
 Using only a nuclear stain, we can group the cells using Euclidean hierarchical clustering to see if there is a phenotypic difference in the nucleus during the T cell maturation process in the thymus.
 
 ### Order of execution:
-1. Cellpose segmentation on dapi channel ([Cellpose github](https://github.com/MouseLand/cellpose))    
+1. Cellpose segmentation on tif image ([Cellpose github](https://github.com/MouseLand/cellpose))    
 2. With seg file and original tif file, execute cellpose_segmentation/index_components for all channels (dapi, cd4, cd8, etc)  
 3. Combine property tables with mergeproperties.R  
 4. pheatmap.R for if you want to annotate for multiple clone channels, or pheatmap_dapi for if only analyzing dapi    
